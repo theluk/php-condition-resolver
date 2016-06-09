@@ -1,6 +1,9 @@
 {
     "name": "theluk/php-condition-resolver",
     "description": "A small helper for defining conditions and matching them against some data",
+    "homepage": "https://github.com/theluk/php-condition-resolver",
+    "version": "v0.1.0",
+    "keywords": ["php", "conditions"],
     "require": {
         "php": ">=5.3.0"
     },
