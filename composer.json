@@ -12,5 +12,10 @@
             "name": "Lukas Klinzing",
             "email": "theluk@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-0": {
+            "theluk": "src"
+        }
+    }
 }
