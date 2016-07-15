@@ -18,7 +18,7 @@ class ConditionResolverTest extends \PHPUnit_Framework_TestCase {
                     "value" => "foo"
                 ),
                 "obj2" => array(
-                    "value" => "foo"
+                    "value" => "Foo"
                 ),
                 "ar" => array("one", "two", "three"),
                 "url" => "www.foo.bar",
@@ -58,7 +58,7 @@ class ConditionResolverTest extends \PHPUnit_Framework_TestCase {
         $this->assertFalse($this->CR->isMatch(array(
             "cmp" => ConditionResolver::COND_CMP_CONTAINS,
             "left" => "test.obj.value",
-            "right" => "haber"
+            "right" => "haBer"
         )));
 
         $this->assertTrue($this->CR->isMatch(array(

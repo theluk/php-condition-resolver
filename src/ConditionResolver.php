@@ -270,7 +270,7 @@ class ConditionResolver {
     {
         switch ($cmp) {
             case self::COND_CMP_EQUAL:
-                return $x == $y;
+                return (is_string($x) ? strtolower($x) : $x) == (is_string($y) ? strtolower($y) : $y);
             case self::COND_CMP_GREATER:
                 return $x > $y;
             case self::COND_CMP_GREATER_OR_EQUAL:
@@ -282,11 +282,11 @@ class ConditionResolver {
             case self::COND_CMP_NOT_EQUAL:
                 return $x != $y;
             case self::COND_CMP_CONTAINS:
-                return strpos($x, $y) !== false;
+                return stripos($x, $y) !== false;
             case self::COND_CMP_STARTSWITH:
-                return $y === "" || strrpos($x, $y, -strlen($x)) !== FALSE;;
+                return $y === "" || strripos($x, $y, -strlen($x)) !== FALSE;
             case self::COND_CMP_ENDSWITH:
-                return $y === "" || (($temp = strlen($x) - strlen($y)) >= 0 && strpos($x, $y, $temp) !== FALSE);
+                return $y === "" || (($temp = strlen($x) - strlen($y)) >= 0 && stripos($x, $y, $temp) !== FALSE);
             case self::COND_CMP_IN:
                 return is_array($y) && in_array($x, $y);
             case self::COND_CMP_NOT_IN:
